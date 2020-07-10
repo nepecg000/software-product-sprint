@@ -1,0 +1,198 @@
+html, body {
+    background: #d4d4d4;
+    margin: auto;
+    white-space: nowrap
+}
+
+.bar {
+    margin-right: 20px;
+    background-image: url(../images/background_sidebar.png);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    left: 10px;
+    top: -420px;
+    transition: 0.8s;
+    padding-top: 0px;
+}
+
+.bar:hover {
+    top: 0;
+}
+
+.bar ul {
+    padding: 0px;
+    list-style: none;
+    color: #ffffff;
+    display: block;
+}
+
+.bar ul li {
+    float: left;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.bar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 80px 10px 20px;
+    width: 75px;
+    display: block;
+}
+
+.bar ul li a:hover {
+    text-decoration: none;
+    color: #ffffff;
+    background: #670000;
+    -moz-transition: background-color 300ms ease-in;
+    -webkit-transition: background-color 300ms ease-in;
+    -ms-transition: background-color 300ms ease-in;
+    -o-transition: background-color 300ms ease-in;
+    transition: background-color 300ms ease-in;
+}
+
+.bar ul li a#onlink {
+    background: #670000;
+    color: #ffffff;
+}
+
+.bar ul li a#onlink:hover {
+    background: #670000;
+    color: #ffffff;
+}
+
+.left {
+    position: absolute;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-image: url("../images/kaohsiung.jpg");
+    width: 100%;
+    top: -5px;
+    border-bottom: 5px solid #000000;
+    height: 400px;
+}
+
+
+.band {
+    position: absolute;
+    display: block;
+    padding: 0px;
+    top: 399px;
+    left: 0;
+    width: 100%;
+    font-family: "Monserrat", sans-serif;
+    background-color: #500001;
+    border-bottom: 5px solid #000000;
+    color: #ffffff;
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.text {
+    max-width: 100%;
+}
+
+.text h1 {
+    display: inline-block;
+    position: absolute;
+    font-size: 30px;
+    text-decoration: underline;
+    font-family: "Monserrat", sans-serif;
+    left: 50px;
+    top: 450px;
+}
+
+.text h2 {
+    position: absolute;
+    font-size: 25px;
+    font-family: "Monserrat", sans-serif;
+    left: 80px;
+    top: 500px;
+}
+
+.text h3 {
+    position: absolute;
+    font-size: 20px;
+    font-family: "Monserrat", sans-serif;
+    left: 110px;
+    top: 530px;
+}
+
+.text h4 {
+    position: absolute;
+    font-size: 30px;
+    font-family: "Monserrat", sans-serif;
+    left: 50px;
+    top: 540px;
+}
+
+.text b1 {
+    position: absolute;
+    font-size: 20px;
+    left: 85px;
+    font-family: "Monserrat", sans-serif;
+    top: 620px;
+}
+
+.text b1 p2 {
+    position: absolute;
+    top: 70px;
+}
+
+.text h4 p2 {
+    position: absolute;
+    top: 70px;
+}
+
+.text h4 p3 {
+    position: absolute;
+    top: 230px;
+}
+
+.text b1 p3 {
+    position: absolute;
+    top: 230px;
+}
+
+.text h4 p4 {
+    position: absolute;
+    top: 370px;
+}
+
+.text b1 p4 {
+    position: absolute;
+    top: 370px;
+}
+
+.text .photo {
+    display: inline-block;
+    right: 0;
+    top: 550px;
+    margin-left: 1200px;
+    position: relative;
+    max-width: 600px;
+    height: auto;
+}
+
+.galary{
+    position: absolute;
+    top: 1200px;
+    left: 85px;
+}
+
+.footer {
+    position: absolute;
+    padding: 0px;
+    color: #500001;
+    top: 4000px;
+    left: 0;
+    width: 100%;
+    min-height: 20px;
+    background-color: #500001;
+    border-top: 5px solid #000000;
+}
