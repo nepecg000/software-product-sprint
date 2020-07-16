@@ -135,59 +135,27 @@ html, body {
     top: 750px;
 }
 
-.text project_name {
+.text .project .project_name {
     /* position: absolute; */
     width: 100%;
     font-size: 25px;
-    /* left: 45px; */
+    padding-left: 45px;
+    padding-top:20px;
     font-family: "Monserrat", sans-serif;
-    /* top: 50px; */
-    /* top: 840px; */
 }
 
-.text project_content {
-    position: absolute;
+.text .project .project_content {
+    /* position: absolute; */
     width: 100%;
     font-size: 20px;
-    left: 35px;
+    padding-left: 65px;
+    padding-top: 10px;
     font-family: "Monserrat", sans-serif;
-    top: 40px;
-    /* top: 840px; */
 }
 
-.text project_picture{
-    position: absolute;
-    top: 100px;
-}
-
-.text first_project{
-    position: absolute;
-    left: 45px;
-    top: 50px;
-}
-
-.text second_project{
-    position: absolute;
-    left: 45px;
-    top: 210px;
-}
-
-.text small1 {
-    position: absolute;
-    width: 100%;
-    font-size: 25px;
-    font-family: "Monserrat", sans-serif;
-    left: 67.5px;
-    top: 1150px;
-}
-
-.text small2 {
-    position: absolute;
-    width: 100%;
-    font-size: 25px;
-    font-family: "Monserrat", sans-serif;
-    left: 67.5px;
-    top: 1260px;
+.text .project .project_picture{
+    padding-left: 80px;
+    padding-bottom: 0px;
 }
 
 .footer {
