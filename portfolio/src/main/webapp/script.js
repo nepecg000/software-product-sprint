@@ -34,3 +34,17 @@ function getRandomQuote(){
         }
     );
 }
+
+function getJson(){
+    fetch('/data').then(response => response.json()).then((myObject) => {
+        console.log(myObject);
+
+        var text = "";
+        for (var i = 0; i < myObject.length; i++) {
+            text += myObject[i];
+            text += "\n";
+        }
+
+        document.getElementById("greet-container").innerText = text;
+    });
+}
