@@ -30,10 +30,16 @@
         <div class="row">
             <p1>Texas A&M University at College Station, TX</p1>
             <div class="quote">
-                <h1>Random Quotes</h1>
-                <p>Click here to see a random quote:</p>
+                <form action="/data" method="POST">
+                    <p>Say something to me?</p>
+                    <textarea name="text-input"></textarea>
+                    <br/><br/>
+                
+                    <input type="submit" />
+                </form>
+
                 <button onclick="getRandomQuote()">Fetch a quote!</button>
-                <button onclick="getJson()">Greet!</button>
+                <button onclick="getJson()">See what others say</button>
                 <div id="quote-container"></div>
                 <div id="greet-container"></div>
             </div>

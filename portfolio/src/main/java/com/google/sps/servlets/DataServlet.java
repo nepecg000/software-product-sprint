@@ -41,4 +41,13 @@ public class DataServlet extends HttpServlet {
         Gson gson = new Gson();
         response.getWriter().println(gson.toJson(quote_list_));
     }
+
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String input = request.getParameter("text-input");
+        quote_list_.add(input);
+
+        // Redirect back to the HTML page.
+        response.sendRedirect("/index.html");
+    }
 }
