@@ -27,24 +27,17 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-function getRandomQuote(){
-    fetch('/random-quote').then(response => response.text()).then(
-        (quote) =>{
-            document.getElementById('quote-container').innerText = quote;
-        }
-    );
-}
+function getComments(){
+    fetch('/data').then(response => response.json()).then((comment_history) => {
+        console.log(comment_history);
 
-function getJson(){
-    fetch('/data').then(response => response.json()).then((myObject) => {
-        console.log(myObject);
+        const commentsUl = document.getElementById('comments');
 
-        var text = "";
-        for (var i = 0; i < myObject.length; i++) {
-            text += myObject[i];
-            text += "\n";
-        }
+        comment_history.forEach((each_comment) => {
+            const new_li_item = document.createElement('li');
+            new_li_item.innerHTML = each_comment.comment;
 
-        document.getElementById("greet-container").innerText = text;
+            commentsUl.appendChild(new_li_item);
+        })
     });
 }
