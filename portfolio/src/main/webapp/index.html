@@ -12,7 +12,7 @@
         <script src="https://kit.fontawesome.com/20178968f5.js" crossorigin="anonymous"></script>
     </head>
 
-    <body data-gr-c-s-loaded="true">
+    <body data-gr-c-s-loaded="true" onload="varifyLoginStatus()">
         <div class="bar">
             <ul>
                 <li><a href="./index.html" id="onlink">Homepage</a></li>
@@ -37,7 +37,7 @@
                 
                     <input type="submit" />
                 </form>
-
+                <button id="log_button">Log in</button>
                 <button onclick="getComments()">See what others say</button>
 
                 <ul id="comments"></ul>

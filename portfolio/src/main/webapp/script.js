@@ -41,3 +41,39 @@ function getComments(){
         })
     });
 }
+
+function logInOutButtonOnClicked(){
+    fetch('/login').then(response => response.text()).then((text) =>{
+        if(text == null){
+            // Log in on clicked
+            window.open('/login');
+        }
+        else{
+            // Log out on clicked
+            window.open('facebook.com');
+        }
+        // console.log(text);
+    }
+    );
+}
+
+function varifyLoginStatus(){
+    fetch('/login').then(response => response.json()).then((text) =>{
+        console.log(text);
+        var button = document.getElementById('log_button');
+        button.onclick = function() {
+            window.location.href = text.url;
+        }
+        console.log(button);
+
+        if(text.email == ""){
+            // Not login yet    
+        }
+        else{
+            // Already login, changed button's text
+            var button = document.getElementById('log_button');
+            button.innerHTML = "Log out";
+        }
+    });
+    
+}
