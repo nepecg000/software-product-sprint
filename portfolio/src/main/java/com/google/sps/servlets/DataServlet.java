@@ -52,9 +52,10 @@ public class DataServlet extends HttpServlet {
         ArrayList<Comment> comments = new ArrayList<>();
         for (Entity each_entity : results.asIterable()) {
             String comment_str = (String) each_entity.getProperty("comment");
+            String email = (String) each_entity.getProperty("email");
             long timestamp = (long) each_entity.getProperty("timestamp");
 
-            Comment comment = new Comment(comment_str, timestamp);
+            Comment comment = new Comment(email, comment_str, timestamp);
             comments.add(comment);
         }
 
@@ -67,10 +68,12 @@ public class DataServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String comment = request.getParameter("text-input");
+        String email = request.getParameter("email");
         long timestamp = System.currentTimeMillis();
 
         Entity commentEntity = new Entity("Comment");
         commentEntity.setProperty("comment", comment);
+        commentEntity.setProperty("email", email);
         commentEntity.setProperty("timestamp", timestamp);
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
