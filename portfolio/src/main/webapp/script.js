@@ -45,16 +45,27 @@ function getComments(){
         user_td_item.innerHTML ="User";
         var comment_td_item = new_th_item.insertCell();
         comment_td_item.innerHTML = "Comment";
+        var image_td_item = new_th_item.insertCell();
+        image_td_item.innerHTML = "Image";
 
         // Each comments
         comment_history.forEach((each_comment) => {
             var new_tr_item = commentsTable.insertRow();
             
+            // Email
             var user_td_item = new_tr_item.insertCell();
             user_td_item.innerHTML = each_comment.email;
             
+            // Comment
             var comment_td_item = new_tr_item.insertCell();
             comment_td_item.innerHTML = each_comment.comment;
+
+            // Image
+            var img_item = document.createElement("img");
+            img_item.src = each_comment.file_url;
+            // var src = document.getElementById("x");
+            var img_td_item = new_tr_item.insertCell();
+            img_td_item.appendChild(img_item);
         })
     });
 }
@@ -75,6 +86,9 @@ function varifyLoginStatus(){
             // Not login yet
         }
         else{
+            // Only get an upload url if user was logged in
+            getUploadImageUrl();
+
             document.getElementById("email").value = text.email;
 
             // Already login, changed button's text
@@ -84,5 +98,15 @@ function varifyLoginStatus(){
             document.getElementById('form').style.display = "block";
             document.getElementById('see_comment').style.display = "block";
         }
-    });
+    });   
+}
+
+function getUploadImageUrl(){
+    fetch('/get-blobstore-upload-url')
+        .then(response => response.text())
+        .then((upload_url) =>{
+            console.log(upload_url);
+            const form_object = document.getElementById("form");
+            form_object.action = upload_url;
+        });
 }
