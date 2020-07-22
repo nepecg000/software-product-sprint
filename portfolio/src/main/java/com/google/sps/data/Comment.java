@@ -19,12 +19,14 @@ public final class Comment {
 
     private final String comment;
     private final String email;
+    private final String file_url;
     private final long timestamp;
     
 
-    public Comment(String email, String comment, long timestamp) {
+    public Comment(String email, String comment, long timestamp, String url) {
         this.email = email;
         this.comment = comment;
         this.timestamp = timestamp;
+        this.file_url = url;
     }
 }
