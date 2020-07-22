@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
 /**
  * Adds a random greeting to the page.
  */
@@ -31,30 +32,27 @@ function getComments(){
     fetch('/data').then(response => response.json()).then((comment_history) => {
         console.log(comment_history);
 
-        const commentsUl = document.getElementById('comments');
+        const commentsTable = document.getElementById('comments_table');
 
+        // Header
+        var new_th_item = commentsTable.insertRow();
+            
+        var user_td_item = new_th_item.insertCell();
+        user_td_item.innerHTML ="User";
+        var comment_td_item = new_th_item.insertCell();
+        comment_td_item.innerHTML = "Comment";
+
+        // Each comments
         comment_history.forEach((each_comment) => {
-            const new_li_item = document.createElement('li');
-            new_li_item.innerHTML = each_comment.comment;
-
-            commentsUl.appendChild(new_li_item);
+            var new_tr_item = commentsTable.insertRow();
+            
+            var user_td_item = new_tr_item.insertCell();
+            user_td_item.innerHTML = each_comment.email;
+            
+            var comment_td_item = new_tr_item.insertCell();
+            comment_td_item.innerHTML = each_comment.comment;
         })
     });
-}
-
-function logInOutButtonOnClicked(){
-    fetch('/login').then(response => response.text()).then((text) =>{
-        if(text == null){
-            // Log in on clicked
-            window.open('/login');
-        }
-        else{
-            // Log out on clicked
-            window.open('facebook.com');
-        }
-        // console.log(text);
-    }
-    );
 }
 
 function varifyLoginStatus(){
@@ -67,12 +65,17 @@ function varifyLoginStatus(){
         console.log(button);
 
         if(text.email == ""){
-            // Not login yet    
+            // Not login yet
         }
         else{
+            document.getElementById("email").value = text.email;
+
             // Already login, changed button's text
             var button = document.getElementById('log_button');
             button.innerHTML = "Log out";
+
+            document.getElementById('form').style.display = "block";
+            document.getElementById('see_comment').style.display = "block";
         }
     });
     

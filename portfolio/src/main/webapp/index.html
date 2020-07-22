@@ -29,20 +29,24 @@
         </div>
         <div class="row">
             <p1>Texas A&M University at College Station, TX</p1>
+            
+            <logos><img src="./images/logos2.png"></logos>    
             <div class="quote">
-                <form action="/data" method="POST">
-                    <p>Say something to me?</p>
+
+                <p>Want to Say something to me?</p>
+                <form action="/data" method="POST" id="form" style="display:none">
+                    <input type="hidden" name="email" id="email"/>
                     <textarea name="text-input"></textarea>
                     <br/><br/>
                 
                     <input type="submit" />
                 </form>
                 <button id="log_button">Log in</button>
-                <button onclick="getComments()">See what others say</button>
+                <button id="see_comment" onclick="getComments()" style="display:none">See what others said</button>
 
-                <ul id="comments"></ul>
+                <br/><br/>
+                <table id="comments_table" class="comments_table"/>
             </div>
-            <logos><img src="./images/logos2.png"></logos>    
         </div>
 
         
