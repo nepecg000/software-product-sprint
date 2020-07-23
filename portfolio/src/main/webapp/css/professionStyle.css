@@ -1,0 +1,171 @@
+html, body {
+    background: #d4d4d4;
+    margin: auto;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+.bar {
+    margin-right: 20px;
+    background-image: url(../images/background_sidebar.png);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    left: 10px;
+    top: -420px;
+    transition: 0.8s;
+    padding-top: 0px;
+}
+
+.bar:hover {
+    top: 0;
+}
+
+.bar ul {
+    padding: 0px;
+    list-style: none;
+    color: #ffffff;
+    display: block;
+}
+
+.bar ul li {
+    float: left;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.bar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 80px 10px 20px;
+    width: 75px;
+    display: block;
+}
+
+.bar ul li a:hover {
+    text-decoration: none;
+    color: #ffffff;
+    background: #670000;
+    -moz-transition: background-color 300ms ease-in;
+    -webkit-transition: background-color 300ms ease-in;
+    -ms-transition: background-color 300ms ease-in;
+    -o-transition: background-color 300ms ease-in;
+    transition: background-color 300ms ease-in;
+}
+
+.bar ul li a#onlink {
+    background: #670000;
+    color: #ffffff;
+}
+
+.bar ul li a#onlink:hover {
+    background: #670000;
+    color: #ffffff;
+}
+
+.pdfbutton {
+    background: #500001;
+    font-size: 30px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    cursor: pointer;
+    text-align: center;
+}
+
+.pdfposition {
+    background: #500001;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.pdfposition post {
+    position: absolute;
+    top: 800px;
+    right: 20px;
+}
+
+.header {
+    position: absolute;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+    font-family: "Monserrat", sans-serif;
+    font-size: 100px;
+    color: #ffffff;
+    text-align: center;
+    top: 580px;
+    left: 75px;
+}
+
+.horibar {
+    position: absolute;
+    display: block;
+    padding: 5px;
+    top: 699px;
+    left: 0;
+    right: 0;
+    background-color: #500001;
+    border-bottom: 5px solid #000000;
+    border-top: 5px solid #000000;
+}
+
+.background {
+    background-image: url("../images/info.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 700px;
+    background-size: cover;
+    opacity: 0.9;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.text h1 {
+    position: absolute;
+    width: 100%;
+    font-size: 30px;
+    font-family: "Monserrat", sans-serif;
+    left: 50px;
+    top: 750px;
+}
+
+.text .project .project_name {
+    /* position: absolute; */
+    width: 100%;
+    font-size: 25px;
+    padding-left: 45px;
+    padding-top:20px;
+    font-family: "Monserrat", sans-serif;
+}
+
+.text .project .project_content {
+    /* position: absolute; */
+    width: 100%;
+    font-size: 20px;
+    padding-left: 65px;
+    padding-top: 10px;
+    font-family: "Monserrat", sans-serif;
+}
+
+.text .project .project_picture{
+    padding-left: 80px;
+    padding-bottom: 0px;
+}
+
+.footer {
+    position: absolute;
+    padding: 0px;
+    color: #500001;
+    top: 1500px;
+    left: 0;
+    width: 100%;
+    min-height: 20px;
+    background-color: #500001;
+    border-top: 5px solid #000000;
+}
