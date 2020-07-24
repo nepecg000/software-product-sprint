@@ -18,9 +18,12 @@ package com.google.sps.data;
 public final class Comment {
 
     private final String comment;
+    private final String email;
     private final long timestamp;
+    
 
-    public Comment(String comment, long timestamp) {
+    public Comment(String email, String comment, long timestamp) {
+        this.email = email;
         this.comment = comment;
         this.timestamp = timestamp;
     }

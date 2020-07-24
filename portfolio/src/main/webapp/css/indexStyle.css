@@ -140,6 +140,23 @@ html, body {
 
 .row .quote{
     position: absolute;
+    left: 20px;
+}
+
+.row .quote table{
+    width: 400px;        
+    border-collapse: collapse;
+}
+.row .quote td{
+    border-bottom: 1px solid #888888; 
+    padding: 5px;
+}
+.row .quote tr:nth-child(1){
+    background-color: #7788aa;
+    color: #ffffff;
+}
+.row .quote tr:nth-child(even){
+    background-color: #e8e8e8;
 }
 
 .row logos {

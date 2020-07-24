@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
 /**
  * Adds a random greeting to the page.
  */
@@ -27,17 +28,61 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
+/*
+    This function is called when clients click "see what other says" button.
+    This will ask comments data in the server, and transform the reponse(json), to each column in the table
+*/
 function getComments(){
     fetch('/data').then(response => response.json()).then((comment_history) => {
         console.log(comment_history);
 
-        const commentsUl = document.getElementById('comments');
+        const commentsTable = document.getElementById('comments_table');
 
+        // Header
+        var new_th_item = commentsTable.insertRow();
+            
+        var user_td_item = new_th_item.insertCell();
+        user_td_item.innerHTML ="User";
+        var comment_td_item = new_th_item.insertCell();
+        comment_td_item.innerHTML = "Comment";
+
+        // Each comments
         comment_history.forEach((each_comment) => {
-            const new_li_item = document.createElement('li');
-            new_li_item.innerHTML = each_comment.comment;
-
-            commentsUl.appendChild(new_li_item);
+            var new_tr_item = commentsTable.insertRow();
+            
+            var user_td_item = new_tr_item.insertCell();
+            user_td_item.innerHTML = each_comment.email;
+            
+            var comment_td_item = new_tr_item.insertCell();
+            comment_td_item.innerHTML = each_comment.comment;
         })
+    });
+}
+
+/*
+    This function will be called when html page was loaded.
+    This is to verify if user was logged in, if it is, unhidden the form and "see comments" button
+    If not, do nothing, because default html has hidden those components
+*/
+function varifyLoginStatus(){
+    fetch('/login').then(response => response.json()).then((text) =>{
+        var button = document.getElementById('log_button');
+        button.onclick = function() {
+            window.location.href = text.url;
+        }
+
+        if(text.email == ""){
+            // Not login yet
+        }
+        else{
+            document.getElementById("email").value = text.email;
+
+            // Already login, changed button's text
+            var button = document.getElementById('log_button');
+            button.innerHTML = "Log out";
+
+            document.getElementById('form').style.display = "block";
+            document.getElementById('see_comment').style.display = "block";
+        }
     });
 }

@@ -6,43 +6,47 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Hsin-Mei Lin's Homepage</title>
     
-        <link rel="stylesheet" type="text/css" href="./css/indexStyle.css">
+        <link rel="stylesheet" type="text/css" href="/css/indexStyle.css">
 
-        <script src="./script.js"/>
+        <script src="/script.js"/>
         <script src="https://kit.fontawesome.com/20178968f5.js" crossorigin="anonymous"></script>
     </head>
 
-    <body data-gr-c-s-loaded="true">
+    <body data-gr-c-s-loaded="true" onload="varifyLoginStatus()">
         <div class="bar">
             <ul>
-                <li><a href="./index.html" id="onlink">Homepage</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./info.html">Info</a></li>
+                <li><a href="/index.html" id="onlink">Homepage</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/info.html">Info</a></li>
                 <li><a href="https://github.com/nepecg000">GitHub</a></li>
             </ul>
         </div>
     
         <div class="main">
-            <clickme id="clickme"><img src="./images/clickme.png" width="25%" height="50%"></clickme>
+            <clickme id="clickme"><img src="/images/clickme.png" width="25%" height="50%"></clickme>
             <header style="font-size 10vw">Hsin-Mei Lin 林欣煤</header>
             <h1 style="font-size 10vw">Computer Science</h1>
         </div>
         <div class="row">
             <p1>Texas A&M University at College Station, TX</p1>
+            
+            <logos><img src="/images/logos2.png"></logos>    
             <div class="quote">
-                <form action="/data" method="POST">
-                    <p>Say something to me?</p>
+
+                <p>Want to Say something to me?</p>
+                <form action="/data" method="POST" id="form" style="display:none">
+                    <input type="hidden" name="email" id="email"/>
                     <textarea name="text-input"></textarea>
                     <br/><br/>
                 
                     <input type="submit" />
                 </form>
+                <button id="log_button">Log in</button>
+                <button id="see_comment" onclick="getComments()" style="display:none">See what others said</button>
 
-                <button onclick="getComments()">See what others say</button>
-
-                <ul id="comments"></ul>
+                <br/><br/>
+                <table id="comments_table" class="comments_table"/>
             </div>
-            <logos><img src="./images/logos2.png"></logos>    
         </div>
 
         
