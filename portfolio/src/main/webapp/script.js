@@ -48,7 +48,7 @@ function getComments(){
         var image_td_item = new_th_item.insertCell();
         image_td_item.innerHTML = "Image";
 
-        // Each comments
+        // Each comment
         comment_history.forEach((each_comment) => {
             var new_tr_item = commentsTable.insertRow();
             
@@ -62,10 +62,16 @@ function getComments(){
 
             // Image
             var img_item = document.createElement("img");
-            img_item.src = each_comment.file_url;
-            // var src = document.getElementById("x");
             var img_td_item = new_tr_item.insertCell();
             img_td_item.appendChild(img_item);
+
+            // If user didn't upload image, no need to load the image source
+            if(each_comment.file_url == null){
+                
+            }
+            else{
+                img_item.src = each_comment.file_url;
+            }
         })
     });
 }
