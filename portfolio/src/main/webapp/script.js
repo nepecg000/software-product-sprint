@@ -28,6 +28,10 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
+/*
+    This function is called when clients click "see what other says" button.
+    This will ask comments data in the server, and transform the reponse(json), to each column in the table
+*/
 function getComments(){
     fetch('/data').then(response => response.json()).then((comment_history) => {
         console.log(comment_history);
@@ -55,6 +59,11 @@ function getComments(){
     });
 }
 
+/*
+    This function will be called when html page was loaded.
+    This is to verify if user was logged in, if it is, unhidden the form and "see comments" button
+    If not, do nothing, because default html has hidden those components
+*/
 function varifyLoginStatus(){
     fetch('/login').then(response => response.json()).then((text) =>{
         var button = document.getElementById('log_button');
