@@ -8,6 +8,7 @@
     
         <link rel="stylesheet" type="text/css" href="./css/indexStyle.css">
 
+        <script src="./script.js"/>
         <script src="https://kit.fontawesome.com/20178968f5.js" crossorigin="anonymous"></script>
     </head>
 
@@ -24,13 +25,27 @@
         <div class="main">
             <clickme id="clickme"><img src="./images/clickme.png" width="25%" height="50%"></clickme>
             <header style="font-size 10vw">Hsin-Mei Lin 林欣煤</header>
-            <!-- <h1 style="font-size 10vw">Computer Science</h1> -->
+            <h1 style="font-size 10vw">Computer Science</h1>
         </div>
         <div class="row">
             <p1>Texas A&M University at College Station, TX</p1>
+            <div class="quote">
+                <form action="/data" method="POST">
+                    <p>Say something to me?</p>
+                    <textarea name="text-input"></textarea>
+                    <br/><br/>
+                
+                    <input type="submit" />
+                </form>
+
+                <button onclick="getComments()">See what others say</button>
+
+                <ul id="comments"></ul>
+            </div>
             <logos><img src="./images/logos2.png"></logos>    
         </div>
 
+        
 
         <!-- The social media icon bar -->
         <div class="icon-bar">
