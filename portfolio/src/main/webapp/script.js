@@ -101,11 +101,14 @@ function varifyLoginStatus(){
     });   
 }
 
+/*
+    This will be called when user was logged in.
+    To get a blobstore-upload url from the server, and assign it to the form's action
+*/
 function getUploadImageUrl(){
     fetch('/get-blobstore-upload-url')
         .then(response => response.text())
         .then((upload_url) =>{
-            console.log(upload_url);
             const form_object = document.getElementById("form");
             form_object.action = upload_url;
         });
