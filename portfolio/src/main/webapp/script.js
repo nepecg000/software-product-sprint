@@ -57,12 +57,10 @@ function getComments(){
 
 function varifyLoginStatus(){
     fetch('/login').then(response => response.json()).then((text) =>{
-        console.log(text);
         var button = document.getElementById('log_button');
         button.onclick = function() {
             window.location.href = text.url;
         }
-        console.log(button);
 
         if(text.email == ""){
             // Not login yet
@@ -78,5 +76,4 @@ function varifyLoginStatus(){
             document.getElementById('see_comment').style.display = "block";
         }
     });
-    
 }
